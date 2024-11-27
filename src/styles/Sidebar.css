@@ -1,0 +1,115 @@
+/* Sidebar styles for larger screens (desktop) */
+.sidebar {
+  width: 280px;
+  background-color: #1a202c;
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+  color: #3498db;
+  padding: 1rem;
+  border-bottom: 1px solid #2d3748;
+}
+
+/* Navigation items */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: none;
+  color: #a0aec0;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.nav-item:hover {
+  background-color: #2d3748;
+  color: white;
+}
+
+.nav-item.active {
+  background-color: #3498db;
+  color: white;
+  font-weight: 500;
+}
+
+.nav-item svg {
+  font-size: 1.25rem;
+}
+
+/* Mobile View - convert sidebar to top navbar */
+@media (max-width: 768px) {
+  /* Make the sidebar a fixed top navbar */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 1rem;
+    background-color: #1a202c;
+    position: fixed; /* Fix it at the top of the screen */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Make sure it sits above the content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+  }
+
+  .logo {
+    font-size: 1.25rem;
+    text-align: left;
+    color: #3498db;
+    flex-grow: 1;
+    padding-left: 1rem;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-item {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 50%;
+  }
+
+  .nav-item svg {
+    font-size: 1.1rem;
+  }
+  
+  /* Add some padding to the body content to avoid overlap */
+  body {
+    padding-top: 60px; /* Adjust based on the height of your navbar */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+  }
+  .nav-item{
+    width: 50%;
+  }
+}
